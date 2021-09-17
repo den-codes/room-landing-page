@@ -36,6 +36,9 @@ body{
     width: 100%;
     height: 70vh;
 }
+.mobile-slide{
+    display: block;
+}
 .nav{
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,17 +101,17 @@ body{
     margin-top: 6%;
 }
 .left{
-    margin: 91px 25% -5% -112px;
+    margin: 99px 25% -15% -8%;
 }
 .right{
-    margin: 91px 25% -15% -47px;
+    margin: 99px 22% -15% -3%;
 }
 .left, .right{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 65px;
-    height: 65px;
+    width: 90px;
+    height: 75px;
     background-color: hsl(0, 0%, 0%);
     position: absolute;
     cursor: pointer;
@@ -157,5 +160,33 @@ body{
     background-repeat: no-repeat;
 }
 @media only screen and (max-width: 768px) {
-    
+    .home{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    .slide{
+        display: none;
+    }
+    .carousel{
+        display: none;
+    }
+    .mobile-carousel{
+        margin-top: -15%;
+        display: flex;
+        width: 60%;
+        height: 100%;
+        border: 1px solid red;
+    }
+    .mobile-slide{
+        width: 100%;
+        border: 1px solid red;
+    }
+    nav .logo{
+        margin: auto;
+    }
+    nav li{
+        display: none;
+    }
 }
