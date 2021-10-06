@@ -22,27 +22,26 @@ body{
 .home{
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    max-width: 100vw;
     height: 70vh;
 }
 .carousel{
     display: flex;
-    width: 880px;
+    max-width: 884px;
     height: 433px;
 }
 .slide{
-    margin-top: -85px;
-    margin-left: -2px;
-    width: 100%;
+    margin-top: -86px;
+    max-width: 884px;
     height: 70vh;
 }
-.mobile-slide{
-    display: block;
+.carousel_mobile{
+    display: none;
 }
 .nav{
     background-repeat: no-repeat;
     background-size: cover;
-    width: 830px;
+    max-width: 830px;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -55,7 +54,7 @@ body{
 }
 .nav li {
     margin: 0 2% 0 1%;
-    z-index: 999;
+    z-index: 99;
 }
 .nav a{
     color: var(--white);
@@ -68,11 +67,13 @@ body{
 .logo{
     width: 10%;
     margin: 0% 4% 0 3%;
-    z-index: 999;
+    z-index: 99;
 }
-.aside{
-    width: 25vw;
-    margin: 8% 7% 10% 8%;
+.home aside{
+    width: 45%;
+    padding-top: 10%;
+    padding-left: 8%;
+    padding-bottom: -10%;
 }
 .info {
     width: 420px;
@@ -100,20 +101,25 @@ body{
 .info a, img{
     margin-top: 6%;
 }
+.wrapper{
+    width: 175px;
+    height: 75px;
+    position: absolute;
+}
 .left{
-    margin: 99px 25% -15% -8%;
+    margin: 38% 0 0 -66%;
 }
 .right{
-    margin: 99px 22% -15% -3%;
+    margin: 38% 0 0 -17%;
 }
 .left, .right{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90px;
+    position: inherit;
+    width: 87px;
     height: 75px;
     background-color: hsl(0, 0%, 0%);
-    position: absolute;
     cursor: pointer;
     border: none;
     z-index: 1;
@@ -131,13 +137,14 @@ body{
     width: 100vw;
 }
 .img1{ 
-    width: 45vw;
+    width:42vw;
     height: 35vh;
     background-image: url('./images/image-about-dark.jpg');
     background-repeat: no-repeat;
 }
 .about{
-    width: 35vw;
+    width: 38vw;
+    height: 35vh;
     margin: 3% 5% -5% 2%;
 }
 .about h1{
@@ -148,45 +155,163 @@ body{
     color: hsl(0, 0%, 0%);
 }
 .about p{
-    font-size: .80em;
+    font-size: .70em;
     margin-top: 2%;
     line-height: 1.7;
     color: var(--dark-gray);
 }
 .img2{
-    width: 41vw;
+    width: 39vw;
     height: 35vh;
     background-image: url('./images/image-about-light.jpg');
     background-repeat: no-repeat;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 375px){
     .home{
-        display: flex;
         flex-direction: column;
-        width: 100vw;
-        height: 100vh;
+        height: 50vh;
+        overflow: hidden;
     }
-    .slide{
-        display: none;
+    nav ul li{
+       display: block;
+    }
+    .logo{
+        width: 80%;
+        margin: auto;
+        z-index: 999;
     }
     .carousel{
-        display: none;
+        display:none;
     }
-    .mobile-carousel{
-        margin-top: -15%;
+    .carousel_mobile{
+        display:contents;
         display: flex;
-        width: 60%;
-        height: 100%;
-        border: 1px solid red;
+        position: relative;
+        max-width: 375px;
+        height: 360px;
     }
-    .mobile-slide{
+    .slide_mobile{
+        position: relative;
+        margin-top: -2px;
+        max-width: 375px;
+        height: 360px;
+    }
+    .home aside{
         width: 100%;
+        height: 70vh;
+        padding: 15% 5% -5% 5%;
+        margin-top: -2px;
+        margin-bottom: 5%;
         border: 1px solid red;
     }
-    nav .logo{
-        margin: auto;
+    .info h1{
+        font-size: 2em;
     }
-    nav li{
-        display: none;
+    .info p{
+        margin-right: 15%;
     }
+    .wrapper{
+        position: absolute;
+        width: 150px;
+        height: 75px;
+        border: 1px solid red;
+        margin-top: -111%;
+        margin-left: 53%;
+    }
+    .left{
+        margin: 0 0 0 0;
+    }
+    .right{
+        margin: 0 0 0 50%;
+    }
+    .left, .right{
+        width: 75px;
+    }
+    .summary{
+        flex-direction: column;
+        max-width: 100vw;
+        overflow: hidden;
+        height: 50vh;
+        }
+    .about{
+        height: 25vh;
+        margin: 10% 0 5% 8%;
+        padding-right: 18%;
+    }
+    .img1{
+        width: 100vw;
+        height: 30vh;
+    }
+    .img2{
+        height: 30vh;
+    }
+    .img1, .about, .img2{
+        width: 100vw;
+    }
+}
+@media screen and (max-width: 574px) and (min-width: 375px) {
+    .home{
+        flex-direction: column;
+        height: 50vh;
+    }
+    .carousel{
+        max-width: 575px;
+        height: 480px;
+    }
+    .slide{
+        max-width: 575px;
+        height: 480px;
+    }
+    .wrapper{
+        height: 75px;
+        border: 1px solid red;
+        margin-top: -92%;
+        margin-left: 37%;
+    }
+    nav ul li{
+        display:none;
+     }
+     .logo{
+         width: 20%;
+         margin: auto;
+         z-index: 999;
+     }
+     .home aside{
+        width: 100%;
+        height: 55vh;
+        margin-top: -2px;
+        margin-bottom: 5%;
+        border: 1px solid red;
+    }
+    .info h1{
+        font-size: 2em;
+    }
+    .info p{
+        margin-right: 15%;
+    }
+.summary{
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+}
+.about{
+    height: 13vh;
+    margin: 10% 0 0 8%;
+    padding-right: 18%;
+}
+.img1{
+    width: 100%;
+    height: 18vh;
+    background-size: 100%;
+    background-position: 100%;
+}
+.img2{
+    background-size: 100%;
+    background-position: 100%;
+    height: 20vh;
+}
+.img1, .about, .img2{
+    width: 100vw;
+}
 }
